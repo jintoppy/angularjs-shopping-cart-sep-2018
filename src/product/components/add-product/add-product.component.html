@@ -2,10 +2,19 @@
     Add Product Page
     <form name="addProductForm" novalidate ng-submit="$ctrl.addProduct(addProductForm)">
         <div class="form-item">
-            Name: <input type="text" name="name" ng-model="$ctrl.newProduct.name" required minlength="2">
+            Name: <input 
+                    type="text"
+                    name="name"
+                    ng-model="$ctrl.newProduct.name"
+                    required
+                    product-name-validator
+                    minlength="2">
             <div class="error-message" ng-if="addProductForm.name.$dirty">
                 <div ng-if="addProductForm.name.$error.required">
                     Name is requird
+                </div>
+                <div ng-if="addProductForm.name.$error.productName">
+                    Can't add Product in name
                 </div>
                 <div ng-if="addProductForm.name.$error.minlength">
                     Minimum length is 2 characters
