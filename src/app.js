@@ -26,6 +26,12 @@
         });
 
         $stateProvider.state({
+            name: 'addProduct',
+            url: '/add-product',
+            component: 'addProduct'
+        });
+
+        $stateProvider.state({
             name: 'cart',
             url: '/cart',
             component: 'cart'

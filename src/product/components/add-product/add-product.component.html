@@ -1,0 +1,25 @@
+<div>
+    Add Product Page
+    <form name="addProductForm" novalidate ng-submit="$ctrl.addProduct(addProductForm)">
+        <div class="form-item">
+            Name: <input type="text" name="name" ng-model="$ctrl.newProduct.name" required>
+            <div class="error-message" ng-if="addProductForm.name.$dirty && addProductForm.name.$error.required">
+                This field is required
+            </div>
+        </div>
+        <div class="form-item">
+            price: <input type="number" name="price" ng-model="$ctrl.newProduct.price" required>
+        </div>
+        <div class="form-item">
+            Imge Url: <input type="text" name="imageUrl" ng-model="$ctrl.newProduct.imageUrl">
+        </div>
+        <div class="form-item">
+            Description: 
+            <textarea cols="30" rows="10" name="description" ng-model="$ctrl.newProduct.description"></textarea>
+        </div>
+        <div class="form-action">
+            <input type="submit" value="Add" ng-disabled="addProductForm.$invalid">
+            <input type="reset" value="Clear" ng-click="clearForm(addProductForm)">
+        </div>
+    </form>
+</div>
