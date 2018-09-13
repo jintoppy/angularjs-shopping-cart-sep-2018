@@ -15,7 +15,14 @@
         $stateProvider.state({
             name: 'productDetails',
             url: '/product/{productId}',
-            component: 'productDetails'
+            component: 'productDetails',
+            resolve: {
+                product: function(ProductService, $transition$){
+                    const params = $transition$.params();
+                    const productId = params.productId;
+                    return ProductService.getProductById(productId);
+                }
+            }
         });
 
         $stateProvider.state({
