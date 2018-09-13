@@ -1,4 +1,13 @@
-<div>
-    Product list page
-    {{$ctrl.products}}
+<div class="product-list">
+    <div ng-repeat="product in $ctrl.products" class="product-list-item">
+        <h2>{{product.name}}</h2>
+        <div>
+                <img ng-src="{{product.imageUrl}}" alt="">
+        </div>
+        <p ng-bind="product.description"></p>
+        <div class="produce__price">
+            {{product.price | currency }}
+        </div>
+        <a ui-sref="productDetails({productId: product.id})">View Details</a>
+    </div>
 </div>

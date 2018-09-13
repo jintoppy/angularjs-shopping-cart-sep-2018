@@ -20,3 +20,16 @@ footer{
     height: 100px;
     background-color: mediumaquamarine;
 }
+
+.product-list{
+    display: flex;    
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product-list-item {
+    flex: 1;
+    margin: 0;
+    min-width: 32%;
+    margin-bottom: 20px;
+}
